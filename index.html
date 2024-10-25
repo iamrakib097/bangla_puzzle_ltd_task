@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href=".public/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("translate-x-full");
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 text-center">
+    <div class="bg-[#fd5442] h-2 w-full"></div>
+    <!-- Navigation -->
+    <nav class="bg-[#f9f5f1] h-10 max-w-[760px] mx-auto flex justify-between">
+      <div class="p-1 flex items-center gap-4">
+        <img src="./public/logo.png" alt="" class="w-[40px] h-[32px]" />
+
+        <ul class="flex gap-4 items-center justify-center flex-nowrap">
+          <a href="#">MENU</a>
+          <a href="#">REWARDS</a>
+          <a href="#">LOCATION</a>
+          <a href="#">GIFT CARDS</a>
+          <a href="#">LOG IN</a>
+        </ul>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="relative w-[40px]" onclick="toggleSidebar()">
+          <!-- Cart Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-6 cursor-pointer"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
+          <span
+            id="total_cart_item"
+            class="bg-[#f85241] text-white rounded-full w-4 h-4 flex items-center justify-center absolute top-[-5px] right-[6px] text-xs"
+          ></span>
+        </div>
+        <button
+          class="bg-[#f85241] px-2 py-[5px] rounded-lg text-white text-sm tracking-tighter"
+        >
+          ORDER NOW
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-[760px] mx-auto mt-10">
+      <h1 class="capitalize text-center text-[#f85241] text-3xl font-bold">
+        Chicken Crisper Combos
+      </h1>
+      <p>
+        <span class="text-[#f85241]">menu </span> &rarr; chicken crisper combos
+      </p>
+      <p class="text-gray-600">
+        Find everything from our Big Mouth Burgers, our always sizzling, Full-on
+        fajitas, and our famous Chicken Crispers
+      </p>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 product_container">
+        <!-- Render Each Product here -->
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="fixed bg-[#f85241] top-0 right-0 h-full w-[280px] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between overflow-y-auto"
+    >
+      <div>
+        <div class="flex justify-between bg-white p-4">
+          <div class="flex">
+            <div class="w-[32px]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6 cursor-pointer"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <p><span id="sidebar_total_products"> </span></p>
+          </div>
+          <div
+            class="border-2 border-[#f85241] rounded-lg px-2 cursor-pointer inline-flex items-center justify-center close"
+          >
+            close
+          </div>
+        </div>
+
+        <!-- Items in the cart -->
+        <div class="mt-4 p-4" id="sidebar_product__container">
+          <!-- Render Each Sidebar Item Here...  -->
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="bg-white flex justify-between p-4 text-[#f85241] mt-auto">
+        <button>Place Order</button>
+        <span class="total_price">169$</span>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
